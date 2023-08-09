@@ -323,7 +323,7 @@ module Scientist::Experiment
   def generate_result(name)
     observations = []
 
-    behaviors.keys.shuffle.each do |key|
+    behaviors.keys.each do |key|
       block = behaviors[key]
       fabricated_duration = @_scientist_fabricated_durations && @_scientist_fabricated_durations[key]
       observations << Scientist::Observation.new(key, self, fabricated_duration: fabricated_duration, &block)
